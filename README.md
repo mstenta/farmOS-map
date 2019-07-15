@@ -157,6 +157,22 @@ For example:
 }());
 ```
 
+### Google Maps
+
+To add Google Maps layers to a map, perform the following steps:
+
+1. Obtain a Google Maps JavaScript API key. For instructions, see:
+   https://farmos.org/hosting/googlemaps
+2. Add the following script tag to the page *before* any calls to
+   `farmOS.map.create()`, and replace `<KEY>` with your API key:
+
+```
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=<KEY>"></script>
+```
+
+3. After calling `var instance = farmOS.map.create(target)`, call
+   `instance.enableGoogleMaps();`.
+
 ## Development
 
 `npm install` - Install JavaScript dependencies in `./node_modules` and create
