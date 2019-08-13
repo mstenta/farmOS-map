@@ -170,8 +170,12 @@ To add Google Maps layers to a map, perform the following steps:
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=<KEY>"></script>
 ```
 
-3. After calling `var instance = farmOS.map.create(target)`, call
-   `instance.enableGoogleMaps();`.
+3. Add `googleLayers: true` to the options you pass into `farmOS.map.create()`:
+
+```
+var options = { googleLayers: true };
+farmOS.map.create('mymap', options);
+```
 
 ## Development
 

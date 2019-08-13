@@ -22,8 +22,10 @@
     <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=<KEY>"></script> -->
     <script src="./farmOS-map.js"></script>
     <script>
-      var instance = farmOS.map.create("map");
-      // instance.enableGoogleMaps();
+      var options = {
+        // googleLayers: true,
+      };
+      farmOS.map.create("map", options);
     </script>
   </body>
 </html>

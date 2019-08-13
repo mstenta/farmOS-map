@@ -19,7 +19,7 @@ import defaults from './defaults';
 import styles from './styles';
 
 // Import Google Maps integration.
-import enableGoogleMaps from './google';
+import enableGoogleLayers from './google';
 
 // Define an object that represents a single farmOS map instance.
 const createInstance = ({ target, options }) => {
@@ -184,10 +184,12 @@ const createInstance = ({ target, options }) => {
         }
       }
     },
-
-    // Enable Google Maps on the instance.
-    enableGoogleMaps,
   };
+
+  // Add Google layers, if googleLayers is true.
+  if (options.googleLayers) {
+    enableGoogleLayers(instance.map);
+  }
 
   return instance;
 };

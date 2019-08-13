@@ -4,13 +4,10 @@ import OLGoogleMaps from 'olgm/OLGoogleMaps';
 import GoogleLayer from 'olgm/layer/Google';
 import { defaults as defaultGoogleInteractions } from 'olgm/interaction';
 
-// Enable Google Maps.
+// Enable Google layers on a map.
 // Note that this assumes the Google Maps API JavaScript was loaded onto the
 // page with a valid API key. See README.md.
-export default function enableGoogleMaps() {
-  const { map } = this;
-
-  // Define the Google layers that we will add.
+export default function enableGoogleLayers(map) {
   const googleLayers = [
     {
       title: 'Google Hybrid',
