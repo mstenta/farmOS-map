@@ -177,6 +177,9 @@ var options = { googleLayers: true };
 farmOS.map.create('mymap', options);
 ```
 
+It is important to set the `height` of the map element, otherwise the Google
+Maps layers will not work.
+
 ## Development
 
 `npm install` - Install JavaScript dependencies in `./node_modules` and create
