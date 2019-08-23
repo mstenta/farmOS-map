@@ -46,5 +46,6 @@ export default function enableGoogleLayers(map) {
 
   // Activate Google Maps.
   const olGM = new OLGoogleMaps({ map });
+  olGM.getGoogleMapsMap().setTilt(0);
   olGM.activate();
 }
