@@ -33,7 +33,6 @@ export default function enableGoogleLayers(map) {
     const layer = new GoogleLayer({
       title: googleLayers[i].title,
       type: 'base',
-      combine: true,
       visible: false,
       mapTypeId: googleLayers[i].mapTypeId,
     });
