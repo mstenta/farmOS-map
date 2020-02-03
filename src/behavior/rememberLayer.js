@@ -37,6 +37,12 @@ export default {
     });
   },
 
+  detach(instance) {
+    /**
+     * @todo
+     */
+  },
+
   // Remember visibility state of a specific layer.
   remember(layer) {
     loadLayerVisibility(layer);

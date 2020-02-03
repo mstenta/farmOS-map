@@ -104,4 +104,9 @@ export default {
       }
     });
   },
+  detach(instance) {
+    /**
+     * @todo
+     */
+  },
 };

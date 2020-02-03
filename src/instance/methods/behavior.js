@@ -14,3 +14,10 @@ export function addBehavior(name, options = {}) {
 export function attachBehavior(behavior, options = {}) {
   behavior.attach(this, options);
 }
+
+/**
+ * Detach a behavior from the farmOS-map instance.
+ */
+export function detachBehavior(behavior) {
+  behavior.detach(this);
+}

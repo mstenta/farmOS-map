@@ -119,6 +119,13 @@ export function stopMeasure(feature = false) {
   });
 }
 
+export function clearMeasures() {
+  Object.keys(measures).forEach((id) => {
+    map.removeOverlay(measures[id]);
+    delete measures[id];
+  });
+}
+
 // Measure behavior.
 export default {
   attach(instance, options = {}) {
@@ -164,5 +171,8 @@ export default {
         stopMeasure();
       });
     }
+  },
+  detach() {
+    clearMeasures();
   },
 };

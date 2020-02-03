@@ -52,6 +52,13 @@ window.farmOS.map = {
   destroy(target) {
     const i = this.targetIndex(target);
     if (i > -1) {
+
+      // Detach behaviors from the instance.
+      Object.keys(this.behaviors).forEach((key) => {
+        this.instances[i].detachBehavior(this.behaviors[key]);
+      });
+
+      // Destroy the map.
       this.instances[i].map.setTarget(null);
       this.instances.splice(i, 1);
     }
