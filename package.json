@@ -26,9 +26,10 @@
   },
   "dependencies": {
     "ol": "^6.2.1",
-    "olgm": "github:mstenta/ol3-google-maps#farmOS-map",
     "ol-geocoder": "^4.0.0",
     "ol-layerswitcher": "^3.5.0",
-    "ol-popup": "^4.0.0"
+    "ol-popup": "^4.0.0",
+    "olgm": "github:mstenta/ol3-google-maps#farmOS-map",
+    "workbox-webpack-plugin": "^5.0.0"
   }
 }
