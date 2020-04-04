@@ -139,7 +139,7 @@ const defaults = {
   // src/behavior directory.
   behaviors() {
     return [
-      rememberLayer,
+      // rememberLayer,
     ];
   },
 };
