@@ -1,8 +1,8 @@
 // Import source types, layer types, and formats.
 import VectorSource from 'ol/source/Vector';
-import Cluster from 'ol/source/Cluster';
-import TileArcGISRest from 'ol/source/TileArcGISRest';
-import TileWMS from 'ol/source/TileWMS';
+// import Cluster from 'ol/source/Cluster';
+// import TileArcGISRest from 'ol/source/TileArcGISRest';
+// import TileWMS from 'ol/source/TileWMS';
 import XYZ from 'ol/source/XYZ';
 import LayerGroup from 'ol/layer/Group';
 import VectorLayer from 'ol/layer/Vector';
@@ -41,27 +41,27 @@ function addVectorLayer({
   return layer;
 }
 
-// Add a cluster layer to the map.
-function addClusterLayer({
-  title = 'cluster', url, visible = true,
-}) {
-  const format = new GeoJSON();
-  const centroidSource = new VectorSource({
-    url,
-    format,
-  });
-  const clusterSource = new Cluster({
-    distance: 50,
-    source: centroidSource,
-  });
-  const clusterLayer = new VectorLayer({
-    title,
-    source: clusterSource,
-    style: clusterStyle,
-    visible,
-  });
-  return clusterLayer;
-}
+// // Add a cluster layer to the map.
+// function addClusterLayer({
+//   title = 'cluster', url, visible = true,
+// }) {
+//   const format = new GeoJSON();
+//   const centroidSource = new VectorSource({
+//     url,
+//     format,
+//   });
+//   const clusterSource = new Cluster({
+//     distance: 50,
+//     source: centroidSource,
+//   });
+//   const clusterLayer = new VectorLayer({
+//     title,
+//     source: clusterSource,
+//     style: clusterStyle,
+//     visible,
+//   });
+//   return clusterLayer;
+// }
 
 // Add a GeoJSON feature layer to the map.
 function addGeoJSONLayer({
@@ -79,22 +79,22 @@ function addGeoJSONLayer({
   return layer;
 }
 
-// Add a Tile ArcGIS MapServer layer to the map.
-function addTileArcGISMapServerLayer({
-  title = 'arcgis-tile', url, params, visible = true, base = false,
-}) {
-  const source = new TileArcGISRest({
-    url,
-    params,
-  });
-  const layer = new TileLayer({
-    title,
-    source,
-    visible,
-    type: base ? 'base' : 'normal',
-  });
-  return layer;
-}
+// // Add a Tile ArcGIS MapServer layer to the map.
+// function addTileArcGISMapServerLayer({
+//   title = 'arcgis-tile', url, params, visible = true, base = false,
+// }) {
+//   const source = new TileArcGISRest({
+//     url,
+//     params,
+//   });
+//   const layer = new TileLayer({
+//     title,
+//     source,
+//     visible,
+//     type: base ? 'base' : 'normal',
+//   });
+//   return layer;
+// }
 
 // Add Well Known Text (WKT) geometry to the map.
 function addWKTLayer({
@@ -118,22 +118,22 @@ function addWKTLayer({
   return layer;
 }
 
-// Add a WMS tile layer to the map.
-function addWMSTileLayer({
-  title = 'wms', url, params, visible = true, base = false,
-}) {
-  const source = new TileWMS({
-    url,
-    params,
-  });
-  const layer = new TileLayer({
-    title,
-    source,
-    visible,
-    type: base ? 'base' : 'normal',
-  });
-  return layer;
-}
+// // Add a WMS tile layer to the map.
+// function addWMSTileLayer({
+//   title = 'wms', url, params, visible = true, base = false,
+// }) {
+//   const source = new TileWMS({
+//     url,
+//     params,
+//   });
+//   const layer = new TileLayer({
+//     title,
+//     source,
+//     visible,
+//     type: base ? 'base' : 'normal',
+//   });
+//   return layer;
+// }
 
 // Add an XYZ tile layer to the map.
 function addXYZTileLayer({
@@ -172,36 +172,36 @@ export default function addLayer(type, opts = {}) {
   if (type.toLowerCase() === 'vector') {
     layer = addVectorLayer(opts);
   }
-  if (type.toLowerCase() === 'cluster') {
-    if (!opts.url) {
-      throw new Error('Missing a Cluster GeoJSON url.');
-    }
-    layer = addClusterLayer(opts);
-  }
+  // if (type.toLowerCase() === 'cluster') {
+  //   if (!opts.url) {
+  //     throw new Error('Missing a Cluster GeoJSON url.');
+  //   }
+  //   layer = addClusterLayer(opts);
+  // }
   if (type.toLowerCase() === 'geojson') {
     if (!opts.url) {
       throw new Error('Missing a GeoJSON url.');
     }
     layer = addGeoJSONLayer(opts);
   }
-  if (type.toLowerCase() === 'arcgis-tile') {
-    if (!opts.url) {
-      throw new Error('Missing a ArcGIS MapServer url.');
-    }
-    layer = addTileArcGISMapServerLayer(opts);
-  }
+  // if (type.toLowerCase() === 'arcgis-tile') {
+  //   if (!opts.url) {
+  //     throw new Error('Missing a ArcGIS MapServer url.');
+  //   }
+  //   layer = addTileArcGISMapServerLayer(opts);
+  // }
   if (type.toLowerCase() === 'wkt') {
     if (!opts.wkt) {
       throw new Error('Missing a WKT string.');
     }
     layer = addWKTLayer(opts);
   }
-  if (type.toLowerCase() === 'wms') {
-    if (!opts.url) {
-      throw new Error('Missing a WMS url.');
-    }
-    layer = addWMSTileLayer(opts);
-  }
+  // if (type.toLowerCase() === 'wms') {
+  //   if (!opts.url) {
+  //     throw new Error('Missing a WMS url.');
+  //   }
+  //   layer = addWMSTileLayer(opts);
+  // }
   if (type.toLowerCase() === 'xyz') {
     if (!opts.url) {
       throw new Error('Missing an XYZ url.');
