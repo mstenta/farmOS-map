@@ -10,13 +10,13 @@ import 'ol-layerswitcher/src/ol-layerswitcher.css';
 import LayerSwitcher from 'ol-layerswitcher';
 
 // Import ol-geocoder.
-import 'ol-geocoder/dist/ol-geocoder.css';
-import Geocoder from 'ol-geocoder';
+// import 'ol-geocoder/dist/ol-geocoder.css';
+// import Geocoder from 'ol-geocoder';
 
 // Import OL controls.
 import {
   defaults as defaultControls,
-  FullScreen,
+  // FullScreen,
   Rotate,
   ScaleLine,
 } from 'ol/control';
@@ -61,16 +61,16 @@ const defaults = {
     // Define default farmOS controls.
     const farmMapDefaults = [
       new LayerSwitcher(),
-      new FullScreen(),
+      // new FullScreen(),
       new Rotate({ autoHide: false }),
       new ScaleLine({ units: options.units }),
       new Geolocate(),
-      new Geocoder('nominatim', {
-        provider: 'osm',
-        placeholder: 'Search for address...',
-        limit: 5,
-        autoComplete: true,
-      }),
+      // new Geocoder('nominatim', {
+      //   provider: 'osm',
+      //   placeholder: 'Search for address...',
+      //   limit: 5,
+      //   autoComplete: true,
+      // }),
     ];
 
     // If controls were set to 'false', don't attach any controls.
