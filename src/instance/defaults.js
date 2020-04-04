@@ -6,26 +6,26 @@ import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 
 // Import ol-layerswitcher.
-import 'ol-layerswitcher/src/ol-layerswitcher.css';
-import LayerSwitcher from 'ol-layerswitcher';
+// import 'ol-layerswitcher/src/ol-layerswitcher.css';
+// import LayerSwitcher from 'ol-layerswitcher';
 
 // Import ol-geocoder.
-import 'ol-geocoder/dist/ol-geocoder.css';
-import Geocoder from 'ol-geocoder';
+// import 'ol-geocoder/dist/ol-geocoder.css';
+// import Geocoder from 'ol-geocoder';
 
 // Import OL controls.
 import {
   defaults as defaultControls,
-  FullScreen,
-  Rotate,
-  ScaleLine,
+  // FullScreen,
+  // Rotate,
+  // ScaleLine,
 } from 'ol/control';
 
 // Import OL interactions.
 import {
   defaults as defaultInteractions,
-  DragRotateAndZoom,
-  PinchRotate,
+  // DragRotateAndZoom,
+  // PinchRotate,
 } from 'ol/interaction';
 
 // Import Geolocate control.
@@ -60,17 +60,17 @@ const defaults = {
 
     // Define default farmOS controls.
     const farmMapDefaults = [
-      new LayerSwitcher(),
-      new FullScreen(),
-      new Rotate({ autoHide: false }),
-      new ScaleLine({ units: options.units }),
-      new Geolocate(),
-      new Geocoder('nominatim', {
-        provider: 'osm',
-        placeholder: 'Search for address...',
-        limit: 5,
-        autoComplete: true,
-      }),
+      // new LayerSwitcher(),
+      // new FullScreen(),
+      // new Rotate({ autoHide: false }),
+      // new ScaleLine({ units: options.units }),
+      // new Geolocate(),
+      // new Geocoder('nominatim', {
+      //   provider: 'osm',
+      //   placeholder: 'Search for address...',
+      //   limit: 5,
+      //   autoComplete: true,
+      // }),
     ];
 
     // If controls were set to 'false', don't attach any controls.
@@ -104,8 +104,8 @@ const defaults = {
 
     // Define default farmOS interactions.
     const farmMapDefaults = [
-      new DragRotateAndZoom(),
-      new PinchRotate(),
+      // new DragRotateAndZoom(),
+      // new PinchRotate(),
     ];
 
     // If interactions were set to 'false', don't attach any interactions.
