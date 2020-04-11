@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const info = require('./package.json');
 
@@ -28,5 +29,6 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'static' },
     ]),
+    new WorkboxPlugin.GenerateSW(),
   ],
 };
