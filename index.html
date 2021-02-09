@@ -30,6 +30,7 @@
       var myMap = farmOS.map.create("map", options);
       myMap.addBehavior("google");
       myMap.addBehavior("edit");
+      myMap.addBehavior("snappingGrid");
       myMap.addBehavior("measure", { layer: myMap.edit.layer });
       myMap.edit.wktOn("featurechange", console.log);
       myMap.edit.geoJSONOn("featurechange", console.log);
